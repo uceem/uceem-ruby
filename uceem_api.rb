@@ -5,12 +5,12 @@ require 'glorify'
 set :erb, format: :html5
 set :markdown, layout_engine: :erb, layout: :layout
 
-Tilt.prefer Sinatra::Glorify::Template
+Tilt.prefer(Sinatra::Glorify::Template)
 
 get '/' do
-  markdown :index
+  markdown(:index)
 end
 
 get '/authentication' do
-  markdown :authentication
+  markdown(:authentication)
 end

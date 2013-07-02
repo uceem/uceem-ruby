@@ -1,8 +1,9 @@
 require 'rubygems'
 require 'sinatra'
 
-set :erb, :format => :html5
+set :erb, format: :html5
+set :markdown, layout_engine: :erb, layout: false
 
 get '/' do
-  erb :index
+  markdown :index
 end

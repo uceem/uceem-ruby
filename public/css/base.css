@@ -1,0 +1,14 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 { font-weight: 300; color: #555; }
+p { color: #666; font-weight: 200; }
+
+span a { color: transparent; font-size: 1px; text-decoration: none; }
+
+.container {
+  margin: auto auto;
+  width: 80%;
+}

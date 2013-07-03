@@ -5,3 +5,5 @@ pre, code {
   font-size: 12px;
   font-family: 'Monaco', sans-serif;
 }
+
+pre { padding: 10px; }

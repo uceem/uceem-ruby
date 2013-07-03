@@ -3,10 +3,15 @@ h2,
 h3,
 h4,
 h5,
-h6 { font-weight: 300; color: #555; }
-p { color: #666; font-weight: 200; }
+h6 { font-weight: 300; color: #444; }
+p { color: #555; font-weight: 200; line-height: 23px; }
 
 span a { color: transparent; font-size: 1px; text-decoration: none; }
+
+ul { list-style-type: none; }
+
+a { color: #01618b; text-decoration: none; }
+a:hover { color: #0398d6; }
 
 .container {
   margin: auto auto;

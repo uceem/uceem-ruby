@@ -8,8 +8,8 @@ A successful request would be similar to the following:
 
 ```bash
 $ curl -X POST -d "email=user@example.com" \ 
--d "password=password" \
-https://uceem.com/api/login.json
+               -d "password=password" \
+               https://uceem.com/api/login.json
 ```
 
 With the response:

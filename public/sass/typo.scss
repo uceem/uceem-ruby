@@ -1,11 +1,8 @@
 @import "bourbon/bourbon";
 
-// Make sure it compiles for now.
-@mixin example-mixin {
-  @include background-image(linear-gradient(hsla(0, 100%, 100%, 0.25) 0%, hsla(0, 100%, 100%, 0.08) 50%, transparent 50%), 
-                           linear-gradient(#4e7ba3, darken(#4e7ba4, 10%)));
+@mixin skinny-and-light-font {
+  color: #666;
+  font-weight: 200;
 }
 
-h1 {
-  @include example-mixin;
-}
+th, td { @include skinny-and-light-font; font-size: 14px; }

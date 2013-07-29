@@ -30,6 +30,22 @@ get '/authentication' do
   markdown(:authentication)
 end
 
-get '' do
+get '/accounts' do
+  markdown(:accounts)
+end
+
+get '/users' do
   markdown(:users)
+end
+
+get '/routers' do
+  markdown(:routers)
+end
+
+get '/clients' do
+  markdown(:clients)
+end
+
+get '/activities' do
+  markdown(:activities)
 end

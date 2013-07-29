@@ -19,7 +19,11 @@ set :markdown, layout_engine: :erb, layout: :layout
 Tilt.prefer(Sinatra::Glorify::Template)
 
 get '/' do
-  markdown(:index)
+  markdown(:introduction)
+end
+
+get '/introduction' do
+  markdown(:introduction)
 end
 
 get '/authentication' do

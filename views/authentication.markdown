@@ -22,10 +22,19 @@ With the response:
 
 A valid response will have the status 200, and an `auth_token` key in the response body. Now that you've secured your token, you will be able to make other requests to the Uceem API. Just be sure to include `auth_token=my_token` as a parameter, otherwise we don't know it's you.
 
+### Using the Uceem gem
+
 The Uceem gem can take care of all of this for you, with one simple call that takes the email and password as parameters:
 
 ```ruby
 require 'uceem'
 
-Uceem::Authentication.begin_session('user@example.com', 'password') # => 'your_secret_auth_token'
+Uceem::Authentication.begin_session('user@example.com', 'password') 
+# => 'your_secret_auth_token'
+```
+
+The `begin_session` call retrieves the `auth_token`, so you can make all the API calls you'd like with the Uceem gem during that session. When you're done:
+
+```ruby
+Uceem::Authentication.end_session
 ```

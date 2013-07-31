@@ -43,4 +43,4 @@ _Consider the following primary actions available to the `User` resource:_
   </tbody>
 </table>
 
-The primary resources available: [Accounts](/accounts/), [Users](/users/), [Routers](/routers/), [Clients](/clients/), and [Activities](/activities/).
+The primary resources available: Accounts, Users, Routers, Clients, and Activities.

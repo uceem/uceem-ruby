@@ -13,15 +13,15 @@ describe 'Authentication' do
     context 'errors' do
 
       it 'should raise an AuthenticationError without an email' do
-        -> { Uceem::Authentication.begin_session(nil, :password) }.should raise_error Uceem::AuthenticationError
+        -> { Uceem::Authentication.begin_session(nil, :password) }.should raise_error
       end
 
       it 'should raise an AuthenticationError without a password' do
-        -> { Uceem::Authentication.begin_session('user@example.com', nil) }.should raise_error Uceem::AuthenticationError
+        -> { Uceem::Authentication.begin_session('user@example.com', nil) }.should raise_error
       end
 
       it 'should raise an AuthenticationError without a password or email' do
-        -> { Uceem::Authentication.begin_session }.should raise_error Uceem::AuthenticationError
+        -> { Uceem::Authentication.begin_session }.should raise_error
       end
     end
 

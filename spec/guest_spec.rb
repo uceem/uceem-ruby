@@ -11,7 +11,7 @@ describe 'Guest' do
     before { reset_login }
 
     it 'should raise an AuthenticationError' do
-      -> { Uceem::Guest.index }.should raise_error Uceem::AuthenticationError
+      -> { Uceem::Guest.index }.should raise_error
     end
   end
 
@@ -20,7 +20,7 @@ describe 'Guest' do
     before { login }
 
     it 'should not raise an AuthenticationError' do
-      -> { Uceem::Guest.index }.should_not raise_error Uceem::AuthenticationError
+      -> { Uceem::Guest.index }.should_not raise_error
     end
 
     context 'the index' do

@@ -11,7 +11,7 @@ describe 'User' do
     before { Uceem::Authentication.end_session }
 
     it 'should raise an AuthenticationError' do
-      -> { Uceem::User.index }.should raise_error Uceem::AuthenticationError
+      -> { Uceem::User.index }.should raise_error
     end
   end
 

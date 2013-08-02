@@ -1,4 +1,3 @@
-uceem-ruby
-==========
+# uceem-ruby
 
-UCEEM API gem
+Uceem API gem, currently under development.

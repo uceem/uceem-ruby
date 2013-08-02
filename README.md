@@ -1,4 +1,3 @@
-uceem-api
-=========
+# uceem-ruby
 
-The web app for Uceem's API Documentation.
+UCEEM API gem

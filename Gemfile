@@ -1,10 +1,8 @@
 source 'https://rubygems.org'
 
-gem 'rack'
-gem 'sinatra'
-gem 'glorify'
-gem 'sass'
-gem 'compass'
+group :development, :test do
+  gem 'rspec'
+end
 
-# Dependency for sass.
-gem 'rb-fsevent', '~> 0.9'
+# Specify your gem's dependencies in paraphrase.gemspec
+gemspec

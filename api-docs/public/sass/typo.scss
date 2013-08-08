@@ -1,8 +1,0 @@
-@import "bourbon/bourbon";
-
-@mixin skinny-and-light-font {
-  color: #666;
-  font-weight: 200;
-}
-
-th, td { @include skinny-and-light-font; font-size: 14px; }

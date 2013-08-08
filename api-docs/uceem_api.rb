@@ -49,3 +49,8 @@ end
 get '/activities' do
   markdown(:activities)
 end
+
+get '/all.css' do
+  content_type 'text/css', charset: 'utf-8'
+  scss(:'../public/scss/all')
+end

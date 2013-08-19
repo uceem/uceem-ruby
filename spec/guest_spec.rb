@@ -33,7 +33,7 @@ describe 'Guest' do
 
       it 'should have the proper guests' do
         Uceem.last_response.count.should == 1
-        Uceem.last_response.first['email'].should == 'myguest@example.com'
+        Uceem.last_response.first['email'].should == 'an_awesome_test_guest@uceem.com'
       end
     end
   end

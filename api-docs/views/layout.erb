@@ -3,18 +3,36 @@
   <link rel='stylesheet' type='text/css' href='all.css' />
 </head>
 <body>
-  <div class="container">
-    <header>
-      <a href='https://www.uceem.com'>
-        <img src="images/uceem_logo.png" alt="Uceem Networks logo" class='logo'>
-      </a>
-    </header>
-    <nav class="main-nav">
-      <a href="/introduction">Introduction</a>
-      <a href="/authentication">Authentication</a>
-      <a href="/accounts">Accounts</a>
-    </nav>
-    <%= yield %>
+<header>
+<div id="st-trigger-effects" class="column">
+  <button data-effect="st-effect-3" id="main-nav" class="pure-button pure-button-primary no-radius">&#9776;</button>
+</div>
+</header>
+<div id="st-container" class="st-container">
+<div class="st-pusher">
+  <nav class="st-menu st-effect-3" id="menu-3">
+    <div class="pure-button pure-button-primary right no-radius" onclick="$('#st-container').removeClass('st-menu-open'); $('#st-trigger-effects > button').fadeIn();">X</div>
+    <h2>Uceem API</h2>
+    <ul class="list">
+      <li><a href="/introduction">Introduction</a></li>
+      <li><a href="/authentication">Authentication</a></li>
+      <li><a href="/accounts">Accounts</a></li>
+    </ul>
+  </nav>
+  <div class='st-content pure-g-r'>
+    <div class='st-content-inner pure-u-1 room-on-left'>
+      <div class="pure-u-1-2">
+        <%= yield %>
+      </div>
+    </div>
   </div>
+</div>
+</div>
+
+<script src="js/jquery-1.9.1.js"></script>
+<script src="js/classie.js"></script>
+<script src="js/sidebar.js"></script>
+<script src="js/catchall.js"></script>
+
 </body>
 </html>

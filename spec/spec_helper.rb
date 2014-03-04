@@ -3,7 +3,7 @@ require 'bundler/setup'
 require 'rspec'
 require 'uceem'
 
-EMAIL = 'uceem_gem_test@beta.uceem.com.local'
+EMAIL    = 'uceem_gem_test@beta.uceem.com.local'
 PASSWORD = 'password'
 
 RSpec.configure do |config|

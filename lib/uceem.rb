@@ -2,6 +2,8 @@ require 'json'
 require 'rest_client'
 require 'uceem/version'
 
+require 'uceem/util'
+
 require 'uceem/uceem_object'
 require 'uceem/authentication'
 require 'uceem/network'
@@ -34,12 +36,10 @@ module Uceem
     response = case method
                when :get    then Uceem.make_request_chasing_redirects(rel_url, params)
                when :put    then RestClient.put(api_url(rel_url), params)
-               when :delete then RestClient.post(api_url(rel_url), params)
                when :post   then RestClient.post(api_url(rel_url), params)
                else raise Uceem::UceemError
                end
     
-    # puts api_url(rel_url).inspect
     handle_response(response)
   rescue RestClient::Unauthorized
     return handle_error(401)
@@ -63,10 +63,10 @@ module Uceem
   
   def self.handle_response(raw_response)
     begin
-      @last_response = JSON.parse(raw_response.body) unless raw_response.body.nil?
+      @last_response = Uceem::Util.parse_and_symbolize_json(raw_response.body) unless raw_response.body.nil?
       @last_response_code = raw_response.code
     rescue JSON::ParserError
-      raise UceemError
+      raise Uceem::UceemError
     end
     
     case @last_response_code

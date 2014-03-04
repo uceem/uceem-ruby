@@ -27,7 +27,7 @@ module Uceem
   end
 
   def self.make_request(method, rel_url, params = {})
-    raise AuthenticationError if @auth_token.nil? and not rel_url == Authentication.rel_url
+    raise Uceem::AuthenticationError if @auth_token.nil? and not rel_url == Authentication.rel_url
     
     params[:auth_token] = @auth_token unless @auth_token.nil?
 
@@ -36,7 +36,7 @@ module Uceem
                when :put    then RestClient.put(api_url(rel_url), params)
                when :delete then RestClient.post(api_url(rel_url), params)
                when :post   then RestClient.post(api_url(rel_url), params)
-               else raise UceemError
+               else raise Uceem::UceemError
                end
     
     # puts api_url(rel_url).inspect
@@ -48,7 +48,7 @@ module Uceem
   end
 
   def self.make_request_chasing_redirects(rel_url, params = {})
-    RestClient.get(api_url(rel_url) + '.json', { params: params }) { |response, request, result, &block|
+    RestClient.get(api_url(rel_url), { params: params }) { |response, request, result, &block|
       if [301, 302, 307].include?(response.code)
         response.follow_redirection(request, result, &block)
       else
@@ -58,7 +58,7 @@ module Uceem
   end
 
   def self.api_url(rel_url = '')
-    @base_url + rel_url
+    "#{ @base_url }#{ rel_url }.json"
   end
   
   def self.handle_response(raw_response)

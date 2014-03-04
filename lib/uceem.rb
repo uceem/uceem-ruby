@@ -4,6 +4,7 @@ require 'uceem/version'
 
 require 'uceem/util'
 
+require 'uceem/api_operations'
 require 'uceem/uceem_object'
 require 'uceem/authentication'
 require 'uceem/network'

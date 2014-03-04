@@ -17,6 +17,8 @@ describe 'User' do
 
   context 'after authenticating' do
 
+    let(:user_email) { 'uceem_gem_test@beta.uceem.com.local' }
+
     before do
       login
       Uceem::User.index
@@ -28,7 +30,16 @@ describe 'User' do
 
     it 'should have the proper users' do
       Uceem.last_response.count.should == 1
-      Uceem.last_response.first[:email].should == 'uceem_gem_test@beta.uceem.com.local'
+      Uceem.last_response.first[:email].should == user_email
+    end
+
+    context 'user show' do
+
+      before { Uceem::User.get(Uceem.last_response.first[:id]) }
+
+      it 'should return the proper user' do
+        Uceem.last_response[:email].should == user_email
+      end
     end
   end
 end

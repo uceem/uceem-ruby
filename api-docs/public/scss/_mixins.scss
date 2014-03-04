@@ -1,0 +1,19 @@
+@mixin center-my-children { text-align: center; }
+@mixin right-my-children  { text-align: right;  }
+@mixin left-my-children   { text-align: left;   }
+
+@mixin full-width {
+  width: 100%;
+  left: 0;
+  overflow-x: hidden;
+  
+  &:after, &:before {
+    content: "";
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 9999px;
+  }
+  &:before { right: 100% }
+  &:after { left: 100% }
+}

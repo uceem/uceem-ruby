@@ -1,0 +1,36 @@
+.clearfix { @include clearfix; }
+
+.pull-left  { float: left;  }
+.pull-right { float: right; }
+
+.center-me { margin: auto auto; }
+
+.center-my-children { @include center-my-children; }
+.right-my-children  { @include right-my-children;  }
+.left-my-children   { @include left-my-children;   }
+
+.little-room           { margin: $margin/2;        }
+.little-room-on-top    { margin-top: $margin/2;    }
+.little-room-on-left   { margin-left: $margin/2;   }
+.little-room-on-right  { margin-right: $margin/2;  }
+.little-room-on-bottom { margin-bottom: $margin/2; }
+
+.room           { margin: $margin;        }
+.room-on-top    { margin-top: $margin;    }
+.room-on-left   { margin-left: $margin;   }
+.room-on-right  { margin-right: $margin;  }
+.room-on-bottom { margin-bottom: $margin; }
+
+.lots-of-room           { margin: $margin*2;        }
+.lots-of-room-on-top    { margin-top: $margin*2;    }
+.lots-of-room-on-left   { margin-left: $margin*2;   }
+.lots-of-room-on-right  { margin-right: $margin*2;  }
+.lots-of-room-on-bottom { margin-bottom: $margin*2; }
+
+.no-room { margin: 0; }
+
+.cushion   { padding: $padding;   }
+.cushion-y { padding: $padding 0; }
+.cushion-x { padding: 0 $padding; }
+
+.no-cushion { padding: 0; }

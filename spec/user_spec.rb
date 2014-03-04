@@ -17,10 +17,29 @@ describe 'User' do
 
   context 'after authenticating' do
 
-    before { login }
+    let(:user_email) { 'uceem_gem_test@beta.uceem.com.local' }
+
+    before do
+      login
+      Uceem::User.index
+    end
 
     it 'should not raise an AuthenticationError' do
-      -> { Uceem::User.index }.should_not raise_error
+      Uceem.success?.should be_true
+    end
+
+    it 'should have the proper users' do
+      Uceem.last_response.count.should == 1
+      Uceem.last_response.first[:email].should == user_email
+    end
+
+    context 'user show' do
+
+      before { Uceem::User.get(Uceem.last_response.first[:id]) }
+
+      it 'should return the proper user' do
+        Uceem.last_response[:email].should == user_email
+      end
     end
   end
 end

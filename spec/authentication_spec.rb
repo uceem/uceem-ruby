@@ -28,8 +28,10 @@ describe 'Authentication' do
     context 'with invalid credentials' do
 
       before do
-        begin 
-          Uceem::Authentication.begin_session(:invalid_email, :invalid_password)
+        begin
+          VCR.use_cassette('bad_login') do
+            Uceem::Authentication.begin_session(:invalid_email, :invalid_password)
+          end
         rescue Uceem::AuthenticationError
         end
       end
@@ -45,7 +47,7 @@ describe 'Authentication' do
 
     context 'with valid credentials' do
 
-      before { Uceem::Authentication.begin_session(EMAIL, PASSWORD) }
+      before { login }
 
       it 'should have created a valid auth_token' do
         Uceem.auth_token.should be

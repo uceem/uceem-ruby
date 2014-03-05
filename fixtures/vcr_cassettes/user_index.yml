@@ -1,0 +1,53 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://beta.uceem.com/manage/users.json?auth_token=5YQp4UaD2uDoxYpwt6ex
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 05 Mar 2014 18:36:36 GMT
+      Etag:
+      - '"7797de634713f760afb7737555bdbafe"'
+      Set-Cookie:
+      - _users_session=BAh7CUkiD3Nlc3Npb25faWQGOgZFVEkiJTVlY2JkMWRmZDE5NjVjMGZlY2UxZWI1M2ZmZmUzYjk2BjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsHWwZpAoYHSSIiJDJhJDEwJEc3OUJpMU4wdUtDWjFTbThZeXBhMS4GOwBUSSIYc2tpcF9jb250ZXh0X2ZpbHRlcgY7AEZUSSITY29udGV4dF9maWx0ZXIGOwBGewA%3D--a897c53173bf5053a91bc09388afb857009c6c91;
+        path=/; secure; HttpOnly
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Rack-Cache:
+      - miss
+      X-Request-Id:
+      - 3e07843c-d25e-4c3e-a30f-604a1ea937f5
+      X-Runtime:
+      - '0.076171'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '[{"id":1926,"email":"uceem_gem_test@beta.uceem.com.local","first_name":"Uceem","last_name":"Gem","role":"admin","external_email":"","current_sign_in":1394044596,"current_sign_in_ip":"184.76.58.57","last_sign_in":1394044419,"last_sign_in_ip":"184.76.58.57","created_at":1375469497,"updated_at":1394044596}]'
+    http_version: 
+  recorded_at: Wed, 05 Mar 2014 18:36:36 GMT
+recorded_with: VCR 2.8.0

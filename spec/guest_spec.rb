@@ -2,6 +2,8 @@ require 'spec_helper'
 
 describe 'Guest' do
 
+  let(:guest_index_data) { VCR.use_cassette('guest_index') { Uceem::Guest.index } }
+
   it 'should have the correct rel_url' do
     Uceem::Guest.rel_url.should == '/guests'
   end
@@ -20,12 +22,12 @@ describe 'Guest' do
     before { login }
 
     it 'should not raise an AuthenticationError' do
-      -> { Uceem::Guest.index }.should_not raise_error
+      -> { guest_index_data }.should_not raise_error
     end
 
     context 'the index' do
       
-      before(:each) { Uceem::Guest.index }
+      before(:each) { guest_index_data }
 
       it 'should have been successful' do
         Uceem.success?.should be_true

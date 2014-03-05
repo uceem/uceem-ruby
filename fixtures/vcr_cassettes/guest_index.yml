@@ -1,0 +1,53 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://beta.uceem.com/guests.json?auth_token=5YQp4UaD2uDoxYpwt6ex
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Wed, 05 Mar 2014 18:33:39 GMT
+      Etag:
+      - '"cf4345e3894141100da982a6a2cedc9e"'
+      Set-Cookie:
+      - _users_session=BAh7CUkiD3Nlc3Npb25faWQGOgZFVEkiJWRlZGIwY2YyNDQzY2ZiMjMxMTQ2ZTI5NDcxMzJkZGY5BjsAVEkiGXdhcmRlbi51c2VyLnVzZXIua2V5BjsAVFsHWwZpAoYHSSIiJDJhJDEwJEc3OUJpMU4wdUtDWjFTbThZeXBhMS4GOwBUSSIYc2tpcF9jb250ZXh0X2ZpbHRlcgY7AEZUSSITY29udGV4dF9maWx0ZXIGOwBGewA%3D--9feeb602f708fb8a393f9de0c66e29b3fc631725;
+        path=/; secure; HttpOnly
+      Status:
+      - 200 OK
+      Strict-Transport-Security:
+      - max-age=31536000
+      X-Rack-Cache:
+      - miss
+      X-Request-Id:
+      - ed4410b0-d70e-4143-bf7a-01a493c41c24
+      X-Runtime:
+      - '0.060181'
+      X-Ua-Compatible:
+      - IE=Edge,chrome=1
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: UTF-8
+      string: '[{"id":1929,"email":"an_awesome_test_guest@uceem.com","first_name":"","last_name":"","role":"user","external_email":"","current_sign_in":0,"current_sign_in_ip":null,"last_sign_in":0,"last_sign_in_ip":null,"created_at":1376948201,"updated_at":1376948227}]'
+    http_version: 
+  recorded_at: Wed, 05 Mar 2014 18:33:39 GMT
+recorded_with: VCR 2.8.0

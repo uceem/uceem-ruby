@@ -19,9 +19,11 @@ describe 'User' do
 
     let(:user_email) { 'uceem_gem_test@beta.uceem.com.local' }
 
+    let(:user_index_data) { VCR.use_cassette('user_index') { Uceem::User.index } }
+
     before do
       login
-      Uceem::User.index
+      user_index_data
     end
 
     it 'should not raise an AuthenticationError' do
@@ -35,7 +37,11 @@ describe 'User' do
 
     context 'user show' do
 
-      before { Uceem::User.get(Uceem.last_response.first[:id]) }
+      let(:user_show_data) do 
+        VCR.use_cassette('user_show') { Uceem::User.get(Uceem.last_response.first[:id]) } 
+      end
+
+      before { user_show_data }
 
       it 'should return the proper user' do
         Uceem.last_response[:email].should == user_email

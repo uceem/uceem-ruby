@@ -32,7 +32,7 @@ module Uceem
   def self.make_request(method, rel_url, params = {})
     raise Uceem::AuthenticationError if @auth_token.nil? and not rel_url == Authentication.rel_url
     
-    params[:auth_token] = @auth_token unless @auth_token.nil?
+    params[:auth_token] = @auth_token if @auth_token
 
     response = case method
                when :get    then Uceem.make_request_chasing_redirects(rel_url, params)

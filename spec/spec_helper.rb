@@ -1,6 +1,8 @@
 require 'rubygems'
 require 'bundler/setup'
 require 'rspec'
+require 'vcr'
+require 'webmock'
 require 'uceem'
 
 EMAIL    = 'uceem_gem_test@beta.uceem.com.local'
@@ -16,9 +18,16 @@ module Uceem
 end
 
 def login
-  Uceem::Authentication.begin_session(EMAIL, PASSWORD)
+  VCR.use_cassette('login') do
+    Uceem::Authentication.begin_session(EMAIL, PASSWORD)
+  end
 end
 
 def reset_login
   Uceem::Authentication.end_session
+end
+
+VCR.configure do |c|
+  c.cassette_library_dir = 'fixtures/vcr_cassettes'
+  c.hook_into :webmock
 end
